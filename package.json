@@ -4,7 +4,7 @@
   "description": "Config module for OstroJS",
   "main": "repository.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx c8 npx jest"
   },
   "dependencies": {
     "@ostro/support": "^1.0.2",
