@@ -1,4 +1,4 @@
-const Config = require('../repository');
+import Config from '../repository';
 
 describe('Config Repository Unit Tests', () => {
 
