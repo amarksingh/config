@@ -1,10 +1,12 @@
+import type { IConfigRepository } from '@ostro/contracts/config/repository';
+
 const ObjectGet = require('lodash.get');
 const ObjectSet = require('lodash.set');
 const { Macroable } = require('@ostro/support/macro');
 
 const kConfig = Symbol('config');
 
-class Config extends Macroable {
+class Config extends Macroable implements IConfigRepository {
     /**
      * Internal configuration storage symbol.
      */
@@ -32,6 +34,16 @@ class Config extends Macroable {
      */
     get<T = any>(configPath: string, defaultValue: T | null = null): T | null {
         return ObjectGet(this[kConfig], configPath, defaultValue);
+    }
+
+    /**
+     * Determine if the given configuration value exists.
+     *
+     * @param key The key or dot-notated path.
+     * @returns True if exists, false otherwise.
+     */
+    has(key: string): boolean {
+        return ObjectGet(this[kConfig], key) !== undefined;
     }
 
     /**

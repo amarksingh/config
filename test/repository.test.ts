@@ -36,6 +36,12 @@ describe('Config Repository Unit Tests', () => {
         expect(config.get('cache.stores.redis.host')).toBe('127.0.0.1');
     });
 
+    test('has() checks if configuration key exists', () => {
+        const config = new Config({ app: { name: 'OstroJS' } });
+        expect(config.has('app.name')).toBe(true);
+        expect(config.has('app.nonexistent')).toBe(false);
+    });
+
     test('__get and __set proxy methods operate on target', () => {
         const config = new Config({ app: { name: 'TestApp' } });
 
