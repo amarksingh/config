@@ -85,4 +85,4 @@ class Config extends Macroable implements IConfigRepository {
     }
 }
 
-export = Config;
+export default Config;
