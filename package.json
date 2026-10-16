@@ -2,8 +2,24 @@
   "name": "@ostro/config",
   "version": "1.0.2",
   "description": "Config module for OstroJS",
-  "main": "repository.ts",
+  "main": "build/repository.js",
+  "types": "build/repository.d.ts",
+  "files": [
+    "build"
+  ],
+  "exports": {
+    ".": {
+      "types": "./build/repository.d.ts",
+      "default": "./build/repository.js"
+    },
+    "./*": {
+      "types": "./build/*.d.ts",
+      "default": "./build/*.js"
+    }
+  },
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build",
     "test": "npx c8 npx jest"
   },
   "dependencies": {
