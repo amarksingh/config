@@ -46,7 +46,7 @@ class Config extends Macroable implements IConfigRepository {
      * @param key - The key or dot-notated path.
      * @returns True if exists, false otherwise.
      */
-    has(key: string): boolean {
+    public has(key: string): boolean {
         return ObjectGet(this[kConfig], key) !== undefined;
     }
 
@@ -68,7 +68,7 @@ class Config extends Macroable implements IConfigRepository {
      * @param method - The property name to read.
      * @returns The resolved value.
      */
-    __get(target: Config, method: string): unknown {
+    public __get(target: Config, method: string): unknown {
         return target.get(method);
     }
 
@@ -80,7 +80,7 @@ class Config extends Macroable implements IConfigRepository {
      * @param value - The value to store.
      * @returns The result of setting the value.
      */
-    __set(target: Config, key: string, value: unknown): unknown {
+    public __set(target: Config, key: string, value: unknown): unknown {
         return target.set(key, value);
     }
 }
