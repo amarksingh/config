@@ -1,4 +1,4 @@
-import Config from '../repository';
+import Config from '../src/repository';
 
 describe('Config Repository Unit Tests', () => {
 

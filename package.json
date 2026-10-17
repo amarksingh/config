@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/ostrojs/config#readme",
   "devDependencies": {
-    "typescript": "^5.8.0",
-    "@types/node": "^22.0.0"
+    "@types/node": "^22.20.5",
+    "typescript": "^5.8.0"
   }
 }

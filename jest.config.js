@@ -15,14 +15,21 @@ module.exports = {
         ]
     },
     "moduleNameMapper": {
-        "^@ostro/support/(.*)$": "<rootDir>/../support/$1",
-        "^@ostro/support$": "<rootDir>/../support",
-        "^@ostro/contracts/(.*)$": "<rootDir>/../contracts/$1",
-        "^@ostro/contracts$": "<rootDir>/../contracts",
-        "^@ostro/config/(.*)$": "<rootDir>/$1",
-        "^@ostro/config$": "<rootDir>/repository"
+        "^@ostro/support/(.*)$": "<rootDir>/../support/src/$1",
+        "^@ostro/support$": "<rootDir>/../support/src",
+        "^@ostro/contracts/(.*)$": "<rootDir>/../contracts/src/$1",
+        "^@ostro/contracts$": "<rootDir>/../contracts/src",
+        "^@ostro/config/(.*)$": "<rootDir>/src/$1",
+        "^@ostro/config$": "<rootDir>/src/repository"
     },
     "collectCoverage": true,
+    "collectCoverageFrom": [
+        "<rootDir>/src/**/*.ts",
+        "!<rootDir>/node_modules/**",
+        "!<rootDir>/test/**",
+        "!<rootDir>/coverage/**",
+        "!<rootDir>/build/**"
+    ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
         "text",
